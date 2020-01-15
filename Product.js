@@ -56,6 +56,7 @@ var products = [
     price: '800000',
   }
 ];
+
 //localStorage.clear();
 localStorage.setItem("productvalue", JSON.stringify(products));
 var item = [];
@@ -97,6 +98,7 @@ function addCart(x) {
   var getAddCart= [];
   getAddCart = JSON.parse(localStorage.getItem('add-cart'));
 }
+
 
   var count = 0;
   var countcart =[];

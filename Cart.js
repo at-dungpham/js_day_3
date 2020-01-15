@@ -15,12 +15,12 @@ function displayTable() {
     var subtotal = document.createElement('td');
     var btnadd = document.createElement('div');
 
-    id.innerHTML = product[properties[0]];
+    id.innerHTML = i+1;
     name.innerHTML = product[properties[1]];
     quantily.innerHTML = ('<input type="number" value="1" min="1" max="100" >');
     price.innerHTML = product[properties[3]];
     subtotal.innerHTML = ('<p></p>');
-    btnadd.innerHTML = ('<button id="'+product[properties[0]]+'" onclick="deleteCart('+product[properties[0]]+')">X</button>');
+    btnadd.innerHTML = ('<button id="'+product[properties[0]]+'" onclick="deleteCart('+i+')">X</button>');
 
     tr.appendChild(id);
     tr.appendChild(name);
@@ -34,14 +34,7 @@ function displayTable() {
 }
 displayTable();
 
-getItem.getCartValue = getItem.getCartValue.splice(0, 1);
-localStorage.setItem('getCartValue', JSON.stringify(getItem));
-
-function subtotal(){
-
-}
-
 function deleteCart(x){
-  getCartValue.splice((x-1)- 0, 1);
-  localStorage.setItem('add-cart', JSON.stringify(getData));
+  getCartValue.splice(x, 1);
+  localStorage.setItem('add-cart', JSON.stringify(getCartValue));
 }
